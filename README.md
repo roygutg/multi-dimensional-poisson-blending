@@ -1,19 +1,37 @@
 # multi-dimensional-poisson-blending
 
-A multidimensional generalization of the seamless cloning algorithm suggested in Perez et al., 2003 [1], AKA
-Poisson Blending.
+A multidimensional generalization of the seamless cloning algorithm suggested in Perez et al. (2003) [1], AKA Poisson Blending.
+
+## Examples
+
+### 2D
+
+This repository includes three 2D example sets, demonstrated in both grayscale and RGB modes in `main.py`. RGB results are attached below:
+
+<p align="center">
+<img src="./examples/2d/1/result_rgb.png" width="320"/>
+<img src="./examples/2d/2/result_rgb.png" width="320"/>
+<img src="./examples/2d/3/result_rgb.png" width="320"/>
+</p>
+
+### 3D
+
+The `main.py` script also generates a 3D example, where an MRI scan of a brain is blended into an MRI scan of a spinal cord. A screenshot of the blended 3D image, presented with `napari`, is attached below:
+
+<p align="center"><img src="./examples/3d/result_3d.png" height="320"/></p>
 
 ## Usage
 
+To use the code, `git clone` this repository.
 To install dependencies, run the following in a terminal window:
 
-```commandline
+```
 pip install -r requirements.txt
 ```
 
 To blend grayscale images, use `PoissonBlending.Poisson2DBlender` or `PoissonBlending.Poisson3DBlender`.
 Both classes expect `numpy` arrays as inputs. Loading images into acceptable formats is the user's
-responsibility. See `main.py` for working examples.
+responsibility, and see `main.py` for working examples.
 
 To blend RGB (or any other multichannel format) images, create an instance of any `PoissonBlender` (e.g., 
 `Poisson2DBlender`, `Poisson3DBlender`) with colored images as inputs. Then use the `Colored` decorator class to add 
